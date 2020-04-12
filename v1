@@ -1,0 +1,27 @@
+num_of_seconds=int(input('Enter number of seconds:'))
+if num_of_seconds>=86400:
+	days=num_of_seconds//86400
+	hours=(num_of_seconds-(86400*days))//3600
+	minutes=(num_of_seconds-((86400*days)+(3600*hours)))//60
+	seconds=num_of_seconds-((86400*days)+(3600*hours)+(60*minutes))
+	print(days, 'day(s),', hours, 'hour(s),', minutes, 'minute(s), and', seconds, 'second(s).')
+elif num_of_seconds<86400 and num_of_seconds>=3600:
+	days=0
+	hours=(num_of_seconds-(86400*days))//3600
+	minutes=(num_of_seconds-((86400*days)+(3600*hours)))//60
+	seconds=num_of_seconds-((86400*days)+(3600*hours)+(60*minutes))
+	print(days, 'day(s),', hours, 'hour(s),', minutes, 'minute(s), and', seconds, 'second(s).')
+elif num_of_seconds<3600 and num_of_seconds>=60:
+	days=0
+	hours=0
+	minutes=(num_of_seconds-((86400*days)+(3600*hours)))//60
+	seconds=num_of_seconds-((86400*days)+(3600*hours)+(60*minutes))
+	print(days, 'day(s),', hours, 'hour(s),', minutes, 'minute(s), and', seconds, 'second(s).')
+elif num_of_seconds<60:
+	days=0
+	hours=0
+	minutes=0
+	seconds=num_of_seconds
+	print(days, 'day(s),', hours, 'hour(s),', minutes, 'minute(s), and', seconds, 'second(s).')
+else:
+	print('Cannot Compute.')
